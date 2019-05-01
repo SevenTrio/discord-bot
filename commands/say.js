@@ -1,5 +1,5 @@
-exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
-    const sayMessage = args.join(" ");
+exports.run = async (client, message, args, level) => {
+    const sayMessage = await client.clean(client, args.join(" "));
     message.delete().catch(O_o => {});
     message.channel.send(sayMessage);
   };
@@ -8,12 +8,13 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     enabled: true,
     guildOnly: false,
     aliases: ["скажи"],
-    permLevel: "Administrator"
+    permLevel: "Moderator",
+    category: "miscelaneous"
   };
   
   exports.help = {
     name: "say",
-    category: "Miscelaneous",
+    category: "Разное",
     description: "Сообщение от бота.",
-    usage: "say"
+    usage: "say [сообщение]"
   };

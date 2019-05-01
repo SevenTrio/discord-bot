@@ -1,4 +1,4 @@
-exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+exports.run = async (client, message, args, level) => {
   const msg = await message.channel.send("Ping?");
   msg.edit(`Pong! Задержка - \`${msg.createdTimestamp - message.createdTimestamp}ms\`. API задержка - \`${Math.round(client.ping)}ms\``);
 };
@@ -7,12 +7,13 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ["пинг"],
-  permLevel: "User"
+  permLevel: "User",
+  category: "systems"
 };
   
 exports.help = {
   name: "ping",
-  category: "Miscelaneous",
-  description: "Это как... Пинг. Потом Понг. Но это не Пинг Понг.",
+  category: "Системные",
+  description: "Показывает пинг бота",
   usage: "ping"
 };

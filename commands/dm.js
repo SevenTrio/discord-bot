@@ -1,4 +1,4 @@
-exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+exports.run = async (client, message, args, level) => {
   let text = args.join(" ").slice(args[0].length+1);
   let member = message.mentions.members.first();
   
@@ -15,12 +15,13 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ["лс"],
-  permLevel: "Bot Admin"
+  permLevel: "Bot Admin",
+  category: "miscelaneous"
 };
   
 exports.help = {
   name: "dm",
-  category: "Miscelaneous",
-  description: "Отправляет сообщение от бота указаному пользователю.",
-  usage: "dm <@user> сообщение"
+  category: "Разное",
+  description: "Отправляет сообщение от бота указаному пользователю",
+  usage: "dm @Someone [сообщение]"
 };
