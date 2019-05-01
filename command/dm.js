@@ -1,4 +1,4 @@
-exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+exports.run = async (client, message, args, level) => {
   let text = args.join(" ").slice(args[0].length+1);
   let member = message.mentions.members.first();
   
@@ -13,14 +13,15 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   
 exports.conf = {
   enabled: true,
-  guildOnly: false,
-  aliases: ["пинг"],
-  permLevel: "User"
+  guildOnly: true,
+  aliases: ["лс"],
+  permLevel: "Bot Admin",
+  category: "miscelaneous"
 };
   
 exports.help = {
-  name: "ping",
-  category: "Miscelaneous",
-  description: "Это как... Пинг. Потом Понг. Но это не Пинг Понг.",
-  usage: "ping"
+  name: "dm",
+  category: "Разное",
+  description: "Отправляет сообщение от бота указаному пользователю",
+  usage: "dm @Someone [сообщение]"
 };

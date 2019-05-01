@@ -25,12 +25,13 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ["призвать"],
-  permLevel: "User"
+  permLevel: "Administrator",
+  category: "miscelaneous"
 };
   
 exports.help = {
   name: "summon",
-  category: "Miscelaneous",
+  category: "Разное",
   description: "Призывает нужного человека",
-  usage: "summon <@user> <причина>"
+  usage: "summon @Someone <причина>"
 };
